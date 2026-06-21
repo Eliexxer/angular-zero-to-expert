@@ -14,18 +14,14 @@ Este repositorio contiene el conjunto de aplicaciones, laboratorios prácticos y
 
 ---
 
+
 ## 📂 Estructura del Repositorio
 
-El proyecto está organizado de forma modular, donde cada carpeta representa una sección del curso o una aplicación funcional independiente:
+El contenido de este curso está centralizado y estructurado en dos grandes bloques lógicos para facilitar su navegación:
 
-*   `01-typescript-intro/` → Fundamentos avanzados de TypeScript, tipado estricto, interfaces y programación orientada a objetos.
-*   `02-bases/` → Conceptos nucleares de Angular: Directivas, componentes, interpolación y comunicación unidireccional (Inputs/Outputs).
-*   `03-gifs-app/` → Aplicación web de consumo de APIs externas (Giphy API) con persistencia de datos en *LocalStorage* e interceptores de red.
-*   `04-country-app/` → SPA avanzada enfocada en enrutamiento dinámico, optimización de búsquedas remotas con técnicas de *Debounce* (RxJS) y estructuración de layouts.
-*   `05-heroes-app/` → Desarrollo Full-Stack simulado que incluye un backend en JSON-Server, diseño UI con Angular Material/Tailwind y operaciones CRUD completas.
-*   `06-forms-app/` → Control exhaustivo de formularios reactivos y validaciones dinámicas en tiempo real.
+*   **`Bases de TypeScript/`** → Laboratorios, ejercicios y asignaciones teórica-prácticas enfocadas en dominar el tipado estricto, interfaces, módulos, clases, genéricos y programación orientada a objetos (POO).
+*   **`Proyectos/`** → Aplicaciones web completas y modulares desarrolladas a lo largo del curso. Cada subcarpeta representa un proyecto independiente (ej. *GifsApp*, *CountryApp*, *HeroesApp*) diseñado para resolver problemas del mundo real consumiendo APIs y aplicando reactividad moderna.
 
-*(Nota: Puedes ir modificando o añadiendo las carpetas a medida que avances en las secciones).*
 
 ---
 
@@ -35,12 +31,18 @@ Para clonar y ejecutar cualquiera de estos miniproyectos en tu entorno local, as
 
 1. **Clonar el repositorio:**
 ```bash
-   git clone [https://github.com/TuUsuarioDeGitHub/angular-zero-to-expert.git](https://github.com/TuUsuarioDeGitHub/angular-zero-to-expert.git)
+   git clone [https://github.com/Eliexxer/angular-zero-to-expert.git](https://github.com/Eliexxer/angular-zero-to-expert.git)
    cd angular-zero-to-expert
+```
 
-   cd 03-gifs-app
+2. **Ingresar a una aplicación específica e instalar dependencias**
+```bash
+   cd Proyectos/nombre-proyecto
    npm install
+```
 
+3. **Levantar el servidor de Desarrollo**
+```bash
    ng serve -o
 ```
 
