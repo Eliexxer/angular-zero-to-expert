@@ -1,0 +1,10 @@
+# Bloquear dependencias en cualquier nivel del repositorio
+**/node_modules/
+**/.angular/
+**/dist/
+**/tmp/
+
+# Archivos de configuración local o secretos
+.env
+.DS_Store
+Thumbs.db
