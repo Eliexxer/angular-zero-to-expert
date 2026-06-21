@@ -1,0 +1,16 @@
+
+    <h3>Personajes</h3>
+    <ul class="list-group">
+      @for (character of characters(); track character.id) {
+        <li class="list-group-item">
+          @if (character.power > 2000) {
+            <span>{{ character.name }}</span>
+            <strong class="text-danger">  ({{ character.power }})</strong>
+          }
+          @else {
+            <span>{{ character.name }}</span>
+            <strong class="text-primary"> ({{ character.power }})</strong>
+          }
+        </li>
+      }
+    </ul>
