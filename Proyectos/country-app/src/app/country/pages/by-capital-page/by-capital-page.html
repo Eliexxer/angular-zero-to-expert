@@ -1,2 +1,2 @@
-<country-search [byPage]="'Buscar por Capital'"></country-search>
-<country-list></country-list>
+<country-search [byPage]="'Buscar por Capital'" (value)="onSearch($event)"></country-search>
+<country-list [countries]="countries()"></country-list>

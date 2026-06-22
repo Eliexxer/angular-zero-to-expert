@@ -1,73 +1,60 @@
 # ==========================================
-# 📦 DEPENDENCIAS Y ARTEFACTOS DE NODE (Angular/Tailwind)
+# 📦 DEPENDENCIAS Y ARTEFACTOS DE NODE
 # ==========================================
-# Ignora node_modules en la raíz y en cualquier subcarpeta de proyectos
 **/node_modules/
 **/dist/
 **/tmp/
 **/out-files/
+**/.cache/
+**/coverage/
+**/.nyc_output/
+*.tgz
 
-# Log de errores de npm/yarn
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.log
 
 # ==========================================
-# 🚀 CACHÉ Y COMPILACIÓN (Angular, TS y Tailwind)
+# 🚀 CACHÉ Y COMPILACIÓN (Angular, TS, Tailwind)
 # ==========================================
-# Caché local de compilación de Angular 19+
 **/.angular/
-
-# Caché de compilación de TypeScript (si usas tsc por separado)
 *.tsbuildinfo
-
-# Caché de optimización de Tailwind CSS
-.tailwindcss/
-.postcss/
+**/.tailwindcss/
+**/.postcss/
 
 # ==========================================
-# 🔐 CONFIGURACIONES LOCALES Y SECRETOS
+# 🔐 SECRETOS Y ENTORNO LOCAL
 # ==========================================
-# Archivos de entorno con credenciales, tokens o llaves de APIs
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
 
 # ==========================================
-# 🛠️ EDITORES DE CÓDIGO (VS Code, JetBrains, etc.)
+# 🛠️ EDITORES E IDE
 # ==========================================
-# Visual Studio Code (mantiene tus configuraciones locales de pantalla/historial)
-.vscode/*
-!.vscode/extensions.json
-!.vscode/launch.json
-
-# JetBrains / WebStorm / IntelliJ
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+**/.vscode/
+**/.idea/
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
+**/.history/
 
 # ==========================================
-# 💻 ARCHIVOS BASURA DEL SISTEMA OPERATIVO
+# 💻 ARCHIVOS DEL SISTEMA OPERATIVO
 # ==========================================
-# Linux / Unix (Arch, CachyOS, Ubuntu, etc.)
 *~
 .fuse_hidden*
 .directory
 .trash/
-
-# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
 ._*
-
-# Windows
 Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
