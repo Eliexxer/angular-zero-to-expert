@@ -8,7 +8,7 @@ export class CountryMapper {
       flag: item.flag?.emoji,
       flagSvg: item.flag?.url_svg,
       population: item.population,
-      name: item.names.common,
+      name: item.names.translations?.['spa']?.common ?? item.names.common,
       capital: item.capitals[0]?.name,
     };
   }

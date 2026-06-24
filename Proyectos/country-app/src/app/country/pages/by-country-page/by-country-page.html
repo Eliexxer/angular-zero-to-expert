@@ -1,2 +1,8 @@
-<country-search [byPage]="'Buscar por País'"></country-search>
-<country-list [countries]="[]"></country-list>
+<country-search [byPage]="'Buscar por País'" (value)="query.set($event)"></country-search>
+
+<country-list [countries]="countryResource.value()!"
+[errorMessage]="countryResource.error()"
+[isLoading]="countryResource.isLoading()"
+[hasCountries]="countryResource.value()?.length === 0"
+></country-list>
+

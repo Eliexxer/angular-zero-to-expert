@@ -19,10 +19,37 @@
         </td>
         <td>{{country.name}}</td>
         <td>{{ country.capital }}</td>
-        <td>{{ country.population }}</td>
+        <td>
+          <span class="badge badge-sm badge-primary">
+            {{ country.population | number }}
+          </span>
+        </td>
+        <td>
+          <a [routerLink]="['/country/by', country.codes?.alpha_2]" class="link-primary cursor-pointer">Mas información</a>
+        </td>
       </tr>
       }
-      <tr></tr>
+      @if (errorMessage()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            {{errorMessage()}}
+          </td>
+        </tr>
+      }
+      @if (isLoading()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            Cargando...
+          </td>
+        </tr>
+      }
+      @if (hasCountries() && !isLoading() && !errorMessage()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            No se encontraron países
+          </td>
+        </tr>
+      }
     </tbody>
   </table>
 </section>

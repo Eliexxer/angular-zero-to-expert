@@ -1,2 +1,7 @@
-<country-search [byPage]="'Buscar por Capital'" (value)="onSearch($event)"></country-search>
-<country-list [countries]="countries()"></country-list>
+<country-search [byPage]="'Buscar por Capital'" (value)="query.set($event)"></country-search>
+
+<country-list [countries]="countryResource.value()!"
+[errorMessage]="countryResource.error()"
+[isLoading]="countryResource.isLoading()"
+[hasCountries]="countryResource.value()?.length === 0"
+></country-list>
