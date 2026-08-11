@@ -25,7 +25,7 @@
           </span>
         </td>
         <td>
-          <a [routerLink]="['/country/by', country.codes?.alpha_2]" class="link-primary cursor-pointer">Mas información</a>
+          <a [routerLink]="['/country/by', country.code?.toLowerCase()]" class="link-primary cursor-pointer">Mas información</a>
         </td>
       </tr>
       }

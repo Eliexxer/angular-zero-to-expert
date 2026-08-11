@@ -10,6 +10,20 @@ export class CountryMapper {
       population: item.population,
       name: item.names.translations?.['spa']?.common ?? item.names.common,
       capital: item.capitals[0]?.name,
+      code: item.codes?.alpha_3,
+      region: item.region,
+      subregion: item.subregion,
+      languages: item.languages,
+      areaKm2: item.area?.kilometers,
+      callingCodes: item.calling_codes,
+      memberships: item.memberships,
+      populationDensity:
+        item.area?.kilometers && item.population
+          ? item.population / item.area.kilometers
+          : undefined,
+      timezones: item.timezones,
+      currencies: item.currencies,
+      governmentType: item.government_type,
     };
   }
 

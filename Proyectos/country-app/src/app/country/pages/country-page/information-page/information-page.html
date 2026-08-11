@@ -1,0 +1,126 @@
+<div class="grid grid-cols-2 gap-2 mx-auto mt-10">
+  <section class="flex flex-col gap-10 pr-5">
+  <figure class="diff aspect-video" tabindex="0">
+    <div class="diff-item-1 brightness-50" role="img" tabindex="0">
+      <img
+        alt="Bandera de {{country().name}}"
+        src="{{country().flagSvg}}" />
+    </div>
+    <div class="diff-item-2" role="img">
+      <img
+        alt="Bandera de {{country().name}}"
+        src="{{country().flagSvg}}" />
+    </div>
+    <div class="diff-resizer"></div>
+  </figure>
+  </section>
+
+  <section class="flex flex-col gap-10 pr-5">
+    <div>
+      <div class="flex items-start justify-between gap-4">
+        <h1 class="text-4xl font-bold">{{country().name}}</h1>
+        @if (timezone()) {
+          <div class="badge badge-lg badge-neutral gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+              <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            {{ timezone() }}
+          </div>
+        }
+      </div>
+      <div class="mt-2 flex items-center gap-3 text-base-content/70">
+        <div
+          class="badge badge-lg badge-outline"
+        >
+          {{ country().region }}
+        </div>
+        @if (country().subregion) {
+          <div class="badge badge-lg badge-outline badge-secondary">
+            {{ country().subregion }}
+          </div>
+        }
+        <span class="text-sm">{{ country().flag }}</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3">
+      <div class="stats stats-vertical shadow">
+        <div class="stat place-items-center">
+          <div class="stat-title">Población de Habitantes</div>
+          <div class="stat-value text-secondary">
+            {{ country().population | number }}
+          </div>
+        </div>
+
+        <div class="stat place-items-center">
+          <div class="stat-title">Superficie</div>
+          <div class="stat-value">
+            {{ country().areaKm2 | number }} <span class="text-sm">km²</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats stats-vertical shadow">
+        <div class="stat place-items-center">
+          <div class="stat-title">Capital</div>
+          <div class="stat-value text-secondary">{{ country().capital }}</div>
+        </div>
+
+        <div class="stat place-items-center">
+          <div class="stat-desc">Población por km²</div>
+          @if (country().populationDensity) {
+            <div class="stat-value">
+              {{ country().populationDensity | number: '1.0-0' }}
+              <span class="text-sm">hab/km²</span>
+            </div>
+          } @else {
+            <div class="stat-value text-base-content/30">—</div>
+            <div class="stat-desc">Sin datos</div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 shadow-sm">
+      <div class="card-body">
+        <ul class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+          <li class="flex items-center justify-between gap-2 border-b border-base-200 pb-2">
+            <span class="text-base-content/60">Idiomas</span>
+            <span class="font-medium text-end">{{ languages() }}</span>
+          </li>
+          <li class="flex items-center justify-between gap-2 border-b border-base-200 pb-2">
+            <span class="text-base-content/60">Código llamada</span>
+            <span class="font-medium">{{ callingCodes() }}</span>
+          </li>
+          <li class="flex items-center justify-between gap-2 border-b border-base-200 pb-2">
+            <span class="text-base-content/60">Moneda</span>
+            <span class="font-medium text-end">{{ currencies() }}</span>
+          </li>
+          <li class="flex items-center justify-between gap-2 border-b border-base-200 pb-2">
+            <span class="text-base-content/60">Tipo de gobierno</span>
+            <span class="font-medium text-end">{{ country().governmentType | titlecase }}</span>
+          </li>
+          <li class="flex items-center justify-between gap-2 border-b border-base-200 pb-2">
+            <span class="text-base-content/60">Código ISO</span>
+            <span class="font-medium">{{ country().code }}</span>
+          </li>
+          <li class="flex items-center justify-between gap-2 border-b border-base-200 pb-2">
+            @if (memberships().length) {
+              <span class="text-base-content/60">Organizaciones</span>
+              <div class="flex flex-wrap gap-2">
+              @for (membership of memberships(); track membership) {
+                <div class="badge badge-primary badge-outline gap-1 py-3">
+                  {{ membership }}
+                </div>
+              }
+              </div>
+            } @else {
+              <span class="text-base-content/60">Organizaciones</span>
+              <span class="font-medium text-base-content/30">—</span>
+            }
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
