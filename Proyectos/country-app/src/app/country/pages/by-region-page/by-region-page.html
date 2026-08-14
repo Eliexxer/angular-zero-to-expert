@@ -1,2 +1,11 @@
-<country-search [byPage]="'Buscar por Región'"></country-search>
-<country-list [countries]="[]"></country-list>
+<section class="gap-2.5 my-4 px-4 flex flex-wrap">
+  @for (opcion of opciones; track opcion.id) {
+    <button
+      (click)="onRegionSelected(opcion)"
+      [class]="activeId() === opcion.id ? 'btn btn-primary' : 'btn btn-neutral'"
+    >
+      {{ opcion.region }}
+    </button>
+  }
+</section>
+<country-list [countries]="countryResource.value()!"></country-list>

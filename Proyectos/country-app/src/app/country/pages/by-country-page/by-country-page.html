@@ -1,8 +1,7 @@
-<country-search [byPage]="'Buscar por País'" (value)="query.set($event)"></country-search>
+<country-search [byPage]="'Buscar por País'" (value)="query.set($event)" [initialValue]="query()"></country-search>
 
 <country-list [countries]="countryResource.value()!"
 [errorMessage]="countryResource.error()"
 [isLoading]="countryResource.isLoading()"
 [hasCountries]="countryResource.value()?.length === 0"
 ></country-list>
-

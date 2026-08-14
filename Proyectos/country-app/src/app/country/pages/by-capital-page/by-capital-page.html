@@ -1,4 +1,4 @@
-<country-search [byPage]="'Buscar por Capital'" (value)="query.set($event)"></country-search>
+<country-search [byPage]="'Buscar por Capital'" (value)="query.set($event)" [initialValue]="query()"></country-search>
 
 <country-list
   [countries]="countryResource.value() ?? []"
