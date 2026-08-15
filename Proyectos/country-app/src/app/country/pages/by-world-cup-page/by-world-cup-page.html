@@ -1,0 +1,12 @@
+<country-search 
+  [byPage]="'Buscar países mundialistas...'" 
+  (value)="query.set($event)" 
+  [initialValue]="query()">
+</country-search>
+
+<country-list 
+  [countries]="countryResource.value()!"
+  [errorMessage]="countryResource.error()"
+  [isLoading]="countryResource.isLoading()"
+  [hasCountries]="countryResource.value()?.length === 0">
+</country-list>

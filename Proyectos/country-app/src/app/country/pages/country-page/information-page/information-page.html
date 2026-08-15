@@ -1,6 +1,6 @@
 <div class="grid grid-cols-2 gap-2 mx-auto mt-10">
   <section class="flex flex-col gap-10 pr-5">
-  <figure class="diff aspect-video" tabindex="0">
+  <figure class="diff h-full w-full" tabindex="0">
     <div class="diff-item-1 brightness-50" role="img" tabindex="0">
       <img
         alt="Bandera de {{country().name}}"
@@ -122,5 +122,39 @@
         </ul>
       </div>
     </div>
+
+    @if (worldCupStats()) {
+      <div class="card bg-base-100 shadow-sm">
+        <div class="card-body">
+          <h2 class="card-title text-warning flex items-center gap-2">
+            🏆 Historial Copa Mundial FIFA
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3 text-center">
+            <div class="flex flex-col items-center justify-center border-r border-base-300 last:border-0">
+              <span class="text-xs text-base-content/60 uppercase">Participaciones</span>
+              <span class="text-2xl font-extrabold text-primary">{{ worldCupStats()?.appearances }}</span>
+            </div>
+            <div class="flex flex-col items-center justify-center border-r border-base-300 last:border-0">
+              <span class="text-xs text-base-content/60 uppercase">Títulos</span>
+              <span class="text-2xl font-extrabold text-success">{{ worldCupStats()?.titles }}</span>
+            </div>
+            <div class="flex flex-col items-center justify-center border-r border-base-300 last:border-0">
+              <span class="text-xs text-base-content/60 uppercase">Mejor Resultado</span>
+              <span class="text-sm font-semibold mt-1">{{ worldCupStats()?.bestResult }}</span>
+            </div>
+            <div class="flex flex-col items-center justify-center last:border-0">
+              <span class="text-xs text-base-content/60 uppercase">Año Debut</span>
+              <span class="text-2xl font-extrabold">{{ worldCupStats()?.debutYear }}</span>
+            </div>
+          </div>
+          @if (worldCupStats()?.titlesYears) {
+            <div class="mt-4 text-xs text-center border-t border-base-200 pt-2">
+              <span class="font-semibold text-warning">Años Campeón:</span>
+              {{ worldCupStats()?.titlesYears?.join(', ') }}
+            </div>
+          }
+        </div>
+      </div>
+    }
   </section>
 </div>

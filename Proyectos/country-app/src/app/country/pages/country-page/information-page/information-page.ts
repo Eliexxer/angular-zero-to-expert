@@ -1,6 +1,7 @@
 import { Component, computed, input } from '@angular/core';
 import { Country } from '../../../interfaces/country.interface';
 import { DecimalPipe, TitleCasePipe } from '@angular/common';
+import { WORLD_CUP_COUNTRIES_DATA } from '../../../data/world-cup-countries.data';
 
 @Component({
   selector: 'information-page',
@@ -10,6 +11,11 @@ import { DecimalPipe, TitleCasePipe } from '@angular/common';
 })
 export class InformationPage {
   country = input.required<Country>();
+
+  worldCupStats = computed(() => {
+    const code = this.country().code?.toUpperCase();
+    return code ? WORLD_CUP_COUNTRIES_DATA[code] ?? null : null;
+  });
 
   languages = computed(() =>
     (this.country().languages ?? []).map((lang) => lang.name).join(', ')

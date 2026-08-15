@@ -5,6 +5,7 @@ import { RestCountriesResponse } from '../interfaces/rest-country.interface';
 import type { Country } from '../interfaces/country.interface';
 import { map, Observable, catchError, throwError, delay, of, tap } from 'rxjs';
 import { CountryMapper } from '../mappers/country.mapper';
+import { WORLD_CUP_COUNTRIES_DATA } from '../data/world-cup-countries.data';
 
 @Injectable({
   providedIn: 'root',
@@ -108,5 +109,22 @@ export class CountryService {
         return throwError(() => new Error("No se pudo encontrar países con ese query"));
       })
     )
+  }
+
+  searchByWorldCup(query: string): Observable<Country[]> {
+    query = query.trim().toLowerCase();
+
+    const search$ = query.length === 0
+      ? this.searchByCountry('a')
+      : this.searchByCountry(query);
+
+    return search$.pipe(
+      map((countries) => {
+        return countries.filter((c) => {
+          const code = c.code?.toUpperCase();
+          return code && WORLD_CUP_COUNTRIES_DATA[code] !== undefined;
+        });
+      })
+    );
   }
 }
