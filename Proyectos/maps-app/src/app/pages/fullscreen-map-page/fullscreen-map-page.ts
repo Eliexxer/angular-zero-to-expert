@@ -1,6 +1,6 @@
 import { DecimalPipe, JsonPipe } from '@angular/common';
 import { AfterViewInit, Component, effect, ElementRef, signal, viewChild } from '@angular/core';
-import { Map, NavigationControl, setWorkerUrl } from 'maplibre-gl';
+import { FullscreenControl, Map, NavigationControl, ScrollZoomHandler, setWorkerUrl } from 'maplibre-gl';
 
 setWorkerUrl('/maplibre-gl-worker.mjs');
 
@@ -95,6 +95,7 @@ export class FullscreenMapPage implements AfterViewInit {
       this.coordinates.set(center)
     });
 
+    map.addControl(new FullscreenControl(), 'top-right');
     map.addControl(new NavigationControl(), 'top-right');
 
 
