@@ -1,59 +1,48 @@
-# HeroPageComponent
+# AngularBasics 🚀 (Bases de Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Este proyecto es una aplicación web introductoria desarrollada para sentar las bases fundamentales de **Angular** (v21+), explorando el ciclo de vida de los datos, la vinculación del DOM y la comunicación elemental entre componentes.
 
-## Development server
+Está diseñado como una guía conceptual para demostrar el entendimiento de la arquitectura de Angular a futuros reclutadores.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Características Clave (Alcance del Proyecto)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. **Contador Interactivo (Counter Component)**:
+   * Demostración básica de enlace de eventos (`(click)`) y enlace de propiedades (`[property]`).
+   * Manejo elemental del estado local del componente sin efectos secundarios.
 
-## Code scaffolding
+2. **Página de Héroes (Hero Page)**:
+   * Uso de interpolación para inyectar variables en la plantilla.
+   * Uso de directivas estructurales y condicionales.
+   * Implementación de métodos tipo `get` para computar cadenas de caracteres complejas dinámicamente basadas en el estado del componente.
+   * Vinculación dinámica de clases CSS y estilos.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+3. **Sección de Dragonball (Componentes Anidados y Data Binding)**:
+   * Renderizado de listas complejas y formularios para inserción de nuevos guerreros.
+   * **Comunicación Padre-Hijo**: Demostración de flujos de datos ascendentes y descendentes (flujo unidireccional de datos).
+   * Migración práctica al uso moderno de **Signals** (`signal()`, `computed()`) para una reactividad más ligera y eficiente.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Conceptos y Tecnologías Reforzadas
 
-```bash
-ng generate --help
-```
+* **Enlace de datos (Data Binding)**: Enlace unidireccional (One-way binding), enlace bidireccional mediante señales y vinculación de eventos del usuario.
+* **Componentes Standalone**: Modularidad moderna sin necesidad de archivos `NgModule` heredados.
+* **Signals de Angular**: Creación y actualización de estados mediante `signal` y variables reactivas dependientes mediante `computed`.
+* **Organización del Proyecto**: Estructura limpia separando `components`, `pages`, e `interfaces`.
 
-## Building
+---
 
-To build the project run:
+## 📦 Instalación y Ejecución Local
 
-```bash
-ng build
-```
+1. Instalar las dependencias de Node:
+   ```bash
+   npm install
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Iniciar el servidor de desarrollo:
+   ```bash
+   npm run start
+   ```
+   *Accede a [http://localhost:4200](http://localhost:4200) en tu navegador.*

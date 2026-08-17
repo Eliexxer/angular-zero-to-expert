@@ -1,59 +1,47 @@
-# LifecycleHooks
+# LifecycleHooks 🔄 (Ciclo de Vida de los Componentes en Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Este proyecto es una aplicación didáctica y de diagnóstico construida en **Angular** (v21+) diseñada para demostrar el flujo de ejecución completo, el orden de disparo y el caso de uso práctico de todos los **ciclos de vida (Lifecycle Hooks)**, tanto tradicionales como modernos.
 
-## Development server
+Es de gran utilidad para demostrar el conocimiento profundo del funcionamiento interno de Angular, la detección de cambios y la integración segura con el DOM ante reclutadores técnicos.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Características Clave (Alcance del Proyecto)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. **Monitoreo de Ciclos de Vida Tradicionales**:
+   * **`ngOnChanges`**: Detección del cambio de propiedades de entrada (`input()`) mostrando la comparación entre el valor previo, el actual y si se trata del primer cambio mediante el objeto `SimpleChanges`.
+   * **`ngOnInit`**: Inicialización del componente una vez que las propiedades de entrada están disponibles.
+   * **`ngDoCheck`**: Control y detección personalizada de cambios que Angular no puede identificar por sí mismo.
+   * **`ngAfterContentInit` / `ngAfterContentChecked`**: Procesos tras la proyección del contenido externo (`<ng-content>`).
+   * **`ngAfterViewInit` / `ngAfterViewChecked`**: Acciones tras la renderización completa de las vistas hijas del componente.
+   * **`ngOnDestroy`**: Liberación de recursos, desuscripción de flujos de datos y limpieza de eventos antes de destruir el componente.
 
-## Code scaffolding
+2. **Demostración de los Nuevos Ciclos de Renderizado (v17+)**:
+   * **`afterNextRender`**: Ejecución de código único justo después del siguiente renderizado completo del DOM. Ideal para inicializar plugins de terceros o manipular el DOM de forma segura sin romper la compatibilidad con SSR (Server-Side Rendering).
+   * **`afterEveryRender`**: Ejecución continua de lógica de sincronización después de cada ciclo de renderizado en el navegador.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+3. **Consola Visual Estilizada**:
+   * Mensajes de log diferenciados y estilizados por CSS en la consola de herramientas de desarrollador para seguir con precisión el orden y el propósito de cada hook durante las interacciones del usuario.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Conceptos y Tecnologías Reforzadas
 
-```bash
-ng generate --help
-```
+* **Detección de Cambios de Angular**: Comprensión práctica de cómo y cuándo Angular comprueba la validez del DOM y actualiza los componentes.
+* **Integración SSR-Friendly**: Uso de las nuevas APIs de renderizado diferido en lugar de llamadas inseguras al DOM en el hilo principal durante la inicialización.
+* **Signal Inputs y SimpleChanges**: Monitoreo de propiedades basadas en señales y su interacción con los ganchos de ciclo tradicionales.
 
-## Building
+---
 
-To build the project run:
+## 📦 Instalación y Ejecución Local
 
-```bash
-ng build
-```
+1. Instalar las dependencias de Node:
+   ```bash
+   npm install
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Iniciar el servidor de desarrollo:
+   ```bash
+   npm run start
+   ```
+   *Accede a [http://localhost:4200](http://localhost:4200) en tu navegador y abre las herramientas de desarrollo (F12 -> Consola) para observar el flujo de ejecución.*

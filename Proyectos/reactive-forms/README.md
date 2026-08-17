@@ -1,59 +1,50 @@
-# ReactiveForms
+# ReactiveForms 📝 (Formularios Reactivos y Validaciones)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Este proyecto es una aplicación web interactiva desarrollada con **Angular** (v21+) dedicada al dominio completo del módulo de **Formularios Reactivos (Reactive Forms)**, validaciones complejas de múltiples campos, controles dinámicos y sincronización de estados del formulario.
 
-## Development server
+Demuestra la capacidad de construir formularios seguros, dinámicos y robustos listos para entornos empresariales.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Características Clave (Alcance del Proyecto)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. **Formulario Básico (Basic Form)**:
+   * Captura estructurada de datos básicos (nombre, precio, existencias).
+   * Validaciones estándar síncronas (`Validators.required`, `Validators.minLength`, `Validators.min`).
+   * Visualización condicional y limpia de mensajes de error específicos para cada campo.
+   * Restablecimiento controlado del estado del formulario tras un envío exitoso.
 
-## Code scaffolding
+2. **Formulario Dinámico (Dynamic Form / FormArray)**:
+   * Permite a los usuarios agregar, editar y eliminar campos de entrada en tiempo real dentro del formulario (e.g., agregar una lista de juegos favoritos).
+   * Implementación avanzada del objeto **`FormArray`** de Angular, manteniendo la reactividad y las validaciones individuales de cada campo autogenerado de forma independiente.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+3. **Formulario de Interruptores (Switches & Checks Page)**:
+   * Sincronización condicional de campos (interruptores de radio, interruptores deslizantes y términos y condiciones de tipo checkbox).
+   * Habilitación y deshabilitación dinámica de secciones del formulario basadas en la selección de opciones previas del usuario.
 
-```bash
-ng generate component component-name
-```
+4. **Validaciones Avanzadas y Personalizadas (Validators)**:
+   * **Validaciones Síncronas Personalizadas**: Lógica a medida para validar cadenas de caracteres o confirmar la coincidencia exacta entre dos contraseñas en campos separados.
+   * **Validaciones Asíncronas (Async Validators)**: Simulación de llamadas a servidores API (mediante retrasos programados de observables) para verificar en tiempo real si un nombre de usuario ya está registrado en la base de datos antes de permitir el envío del formulario.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🛠️ Tecnologías y Conceptos Reforzados
 
-## Building
+* **Angular Reactive Forms Module**: Uso de clases core como `FormGroup`, `FormControl`, `FormArray` y la inyección del servicio `FormBuilder` para declaraciones más limpias.
+* **Manejo de Errores en Formularios**: Funciones helper para determinar la validez de los campos y retornar descripciones de errores precisas en el HTML.
+* **RxJS en Formularios**: Suscripción al flujo continuo de cambios de valor (`valueChanges`) de campos individuales para sincronizar estados en tiempo real de forma declarativa.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 📦 Instalación y Ejecución Local
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. Instalar las dependencias de Node:
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Iniciar el servidor de desarrollo:
+   ```bash
+   npm run start
+   ```
+   *Accede a [http://localhost:4200](http://localhost:4200) en tu navegador.*
