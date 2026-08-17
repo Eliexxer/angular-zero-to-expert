@@ -91,11 +91,20 @@ export class MarkersPage implements AfterViewInit{
     }
     this.markers.update((markers) => [newMarker, ...markers]);
   }
-flyToMarkers(LngLat: LngLatLike) {
-  this.map()?.flyTo({
-    center: LngLat
-  })
-}
+
+  flyToMarkers(LngLat: LngLatLike) {
+    this.map()?.flyTo({
+      center: LngLat
+    })
+  }
+
+  deleteMarker(marker: libreMarker) {
+    if (!this.map()) return
+    const map = this.map()!;
+
+    this.markers.set(this.markers().filter(m => m.id !== marker.id))
+  }
+
   // markerListeners(marker: Marker) {
   //   marker.on('dragend', () => {
   //     const lngLat = marker.getLngLat();
