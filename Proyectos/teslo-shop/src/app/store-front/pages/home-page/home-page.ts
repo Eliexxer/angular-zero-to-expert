@@ -1,0 +1,13 @@
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { ProductCard } from '../../../products/components/product-card/product-card';
+
+@Component({
+  selector: 'app-home-page',
+  imports: [ProductCard],
+  templateUrl: './home-page.html',
+  styles: ``,
+})
+export class HomePage {
+
+}
