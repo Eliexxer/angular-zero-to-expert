@@ -2,9 +2,9 @@
 <h3 class="text-xl font-montserrat mb-5">Para todos los gustos</h3>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 animate-fade-in">
-  <product-card></product-card>
-  <product-card></product-card>
-  <product-card></product-card>
-  <product-card></product-card>
-  <product-card></product-card>
+  @for (prod of products(); track prod.id) {
+    <product-card [product]="prod"></product-card>
+  } @empty {
+  <p>Cargando productos...</p>
+  }
 </div>

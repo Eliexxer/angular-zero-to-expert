@@ -1,1 +1,10 @@
 <p>gender-page works!</p>
+<h1>{{gender()}}</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 animate-fade-in">
+  @for (prod of products(); track prod.id) {
+    <product-card [product]="prod"></product-card>
+  } @empty {
+  <p>Cargando productos...</p>
+  }
+</div>
